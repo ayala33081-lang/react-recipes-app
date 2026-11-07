@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { data, Router, useParams } from "react-router"
+import {useParams,Link } from "react-router"
 import NotFound from "./NotFound";
 
 export default function RecipeDetails(){
@@ -25,13 +25,14 @@ export default function RecipeDetails(){
     },[id]);
 
     if(loading===true){
-        return <h1>טוען נתונים...</h1>
+        return <p>טוען נתונים...</p>
     }
     if(error!=''){
         return <NotFound/>
     }
     return(
         <div>
+        <Link to='/recipes'>חזרה לרשימה</Link>
         <h1>{recipe?.name}</h1>
         <h2>זמן הכנה:{recipe?.prepTimeMinutes} | זמן בישול: {recipe?.cookTimeMinutes} |מנות : {recipe?.servings} |רמת קושי: {recipe?.difficulty} </h2>
         <img src={recipe?.image} alt={recipe?.name} width={300}></img>
@@ -43,6 +44,8 @@ export default function RecipeDetails(){
         <ol>
             {recipe?.instructions.map((st,index)=><li key={index}>{st}</li>)}
         </ol>
+        <Link to={`/recipes/${Number(id)+1}`}>המתכון הבא </Link>
+
         </div>
     )
 
