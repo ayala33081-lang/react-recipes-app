@@ -3,6 +3,12 @@ import { useNavigate } from "react-router";
 import { login } from "../../services/auth";
 import TextField from "../../components/TextField";
 
+/*
+תשובה: בדיקה בעת הקלדה לא אפשרית דרך ה
+action, כי הוא רץ רק בשליחת הטופס.
+אפשר להוסיף onChange או onBlur ידניים לכל שדה, אבל אז צריך state לשגיאות
+*/
+
 export default function UncontrolledLogin() {
   const navigate = useNavigate();
   const submitAction = (prevState, formData) => {
