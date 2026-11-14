@@ -3,6 +3,9 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import RecipesList from "./pages/RecipesList";
+import LoginLayout from "./pages/login/LoginLayout";
+import UncontrolledLogin from "./pages/login/UncontrolledLogin";
+import RhfLogin from "./pages/login/RhfLogin";
 
 export default function App() {
   return (
@@ -10,6 +13,10 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="recipes" element={<RecipesList />} />
+        <Route path="login" element={<LoginLayout />}>
+          <Route path="uncontrolled" element={<UncontrolledLogin />} />
+          <Route path="rhf" element={<RhfLogin />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
