@@ -4,9 +4,9 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import RecipeDetails from "./pages/RecipeDetails"
 import RecipesList from "./pages/RecipesList";
-import Controlled from '../login/Controlled'
-import Uncontrolled from '../login/Uncontrolled'
-import Rhf from '../login/Rhf'
+import Controlled from "./login/Controlled";
+import Uncontrolled from "./login/Uncontrolled"
+import Rhf from "./login/Rhf"
 
 
 export default function App() {
